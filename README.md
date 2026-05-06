@@ -4,6 +4,9 @@ Set up the environment based on the official unitree_ros2 package from unitree.
 
 ##  reference
 ・https://github.com/unitreerobotics/unitree_ros2 \
-・https://github.com/KobeKosenRobotics/rosenv_for_unitree#reference　　
+・https://github.com/KobeKosenRobotics/rosenv_for_unitree
 
-## 
+# Set up
+For information on the environment, please refer to the following repository. \
+https://github.com/KobeKosenRobotics/rosenv_for_unitree#reference \
+
