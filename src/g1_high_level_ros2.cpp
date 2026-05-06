@@ -32,8 +32,7 @@ public:
         RCLCPP_INFO(this->get_logger(), "Trying Start...");
         int ret = client_.Start();
         RCLCPP_INFO(this->get_logger(), "Start SUCCESS");
-        client_.StandUp();
-        RCLCPP_INFO(this->get_logger(), "StandUp sent");
+        
         started_ = true;
        
         }).detach();
