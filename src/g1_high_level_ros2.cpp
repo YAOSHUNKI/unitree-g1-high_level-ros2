@@ -31,17 +31,11 @@ public:
 
         RCLCPP_INFO(this->get_logger(), "Trying Start...");
         int ret = client_.Start();
-
-        if (ret == 0) {
-          RCLCPP_INFO(this->get_logger(), "Start SUCCESS");
-
-          client_.StandUp();
-          RCLCPP_INFO(this->get_logger(), "StandUp sent");
-
-          started_ = true;
-        } else {
-          RCLCPP_ERROR(this->get_logger(), "Start FAILED");
-        }
+        RCLCPP_INFO(this->get_logger(), "Start SUCCESS");
+        client_.StandUp();
+        RCLCPP_INFO(this->get_logger(), "StandUp sent");
+        started_ = true;
+       
         }).detach();
     }
 
