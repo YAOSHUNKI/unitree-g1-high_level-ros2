@@ -27,3 +27,13 @@ Change the script on line 47 as follows
 ```bash
 #47   auto status = response_future.wait_for(std::chrono::seconds(0));
 ```
+### Change to g1_loco_client.hpp
+Modify `g1_loco_client.hpp` in `unitree_ros2/example/include/g1` to change the runtime.
+```bash
+#215     return SetVelocity(vx, vy, vyaw, continous_move ? 864000.F : 1.F);
+```
+Change the script on line 215 as follows
+```bash
+#215     return SetVelocity(vx, vy, vyaw, 0.3F);
+```
+Here, you can set how many seconds of operation each /cmd_vel command performs. Please adjust the duration as needed.
