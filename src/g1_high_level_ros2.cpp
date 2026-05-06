@@ -21,7 +21,7 @@ class CmdVelToSportRequest : public rclcpp::Node
 public:
     CmdVelToSportRequest() : Node("cmd_vel_to_sport_request"), client_(this)
     {
-        // コマンド速度トピックを購読
+        // cmd_vel subscribe
         cmd_vel_subscriber_ = this->create_subscription<geometry_msgs::msg::Twist>(
             "/cmd_vel", 10, std::bind(&CmdVelToSportRequest::cmdVelCallback, this, _1));
         
@@ -48,14 +48,13 @@ public:
 private:
     void cmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr cmd_vel_msg)
     {
-        // 受け取った/cmd_velメッセージを出力
         RCLCPP_INFO(this->get_logger(), "Received cmd_vel: LinearX=%f, LinearY=%f, AngularZ=%f",
                     cmd_vel_msg->linear.x, cmd_vel_msg->linear.y, cmd_vel_msg->angular.z);
 
         client_.Move(cmd_vel_msg->linear.x, cmd_vel_msg->linear.y, cmd_vel_msg->angular.z);
     }
 
-    // 購読者
+    // subscriber
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_subscriber_;
     unitree::robot::g1::LocoClient client_;
     bool started_ = false;
