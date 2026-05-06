@@ -18,4 +18,12 @@ unitree_ros2/example/src/src/g1/high_level
 git clone https://github.com/YAOSHUNKI/unitree-g1-high_level-ros2/src/g1_high_level_ros2.cpp
 ```
 ## 2.Changes to the include file
-
+### Change to base_clinet.hpp
+Modify `base_client.hpp` located in `unitree_ros2/example/include/common` to change the topic reception interval.
+```bash
+#47   auto status = response_future.wait_for(std::chrono::seconds(5));
+```
+Change the script on line 47 as follows
+```bash
+#47   auto status = response_future.wait_for(std::chrono::seconds(0));
+```
