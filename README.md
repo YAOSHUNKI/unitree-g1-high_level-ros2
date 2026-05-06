@@ -8,5 +8,12 @@ Set up the environment based on the official unitree_ros2 package from unitree.
 
 # Set up
 For information on the environment, please refer to the following repository. \
-https://github.com/KobeKosenRobotics/rosenv_for_unitree#reference \
+https://github.com/KobeKosenRobotics/rosenv_for_unitree#reference 
+
+# Setting Up a ROS 2 Environment
+## 1.git clone src file
+Please git clone the src files into the g1 directory of the unitree_ros2 examples. \
+```bash
+git clone https://github.com/YAOSHUNKI/unitree-g1-high_level-ros2/src/g1_high_level_ros2.cpp
+```
 
